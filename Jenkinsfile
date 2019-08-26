@@ -2,9 +2,9 @@ pipeline {
     agent any
     stages {
         stage('clean') {
+            tool name: 'maven', type: 'maven'
             steps {
-                def mvnHome = tool name: 'maven', type: 'maven'
-                sh "${mvnHome}/bin/mvn clean"
+                sh "mvn clean"
             }
         }
         stage('test') {
