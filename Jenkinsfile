@@ -4,7 +4,7 @@ pipeline {
         stage('clean') {
             steps {
                 tool name: 'maven', type: 'maven'
-                sh "mvn clean"
+                sh "${tool name: 'maven', type: 'maven'}mvn clean"
             }
         }
         stage('test') {
