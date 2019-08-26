@@ -1,6 +1,7 @@
 pipeline {
     agent any
     stages {
+        tool name: 'maven', type: 'maven'
         stage('clean') {
             steps {
                 sh "mvn clean"
