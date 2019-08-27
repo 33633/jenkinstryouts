@@ -1,22 +1,22 @@
 pipeline {
     agent any
     environment {
-        mvn="${tool name: 'maven', type: 'maven'}/bin/mvn"
+        mavn="${tool name: 'maven', type: 'maven'}/bin/mvn"
     }
     stages {
         stage('clean') {
             steps {
-                sh "mvn clean"
+                sh "mavn clean"
             }
         }
         stage('test') {
             steps {
-                sh "mvn test"
+                sh "mavn test"
             }
         }
         stage('package') {
             steps {
-                sh "mvn package"
+                sh "mavn package"
         }
      }
   }
