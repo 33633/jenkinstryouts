@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        mvn='${tool name: 'maven', type: 'maven'}/bin/mvn'
+        mvn="${tool name: 'maven', type: 'maven'}/bin/mvn"
     }
     stages {
         stage('clean') {
