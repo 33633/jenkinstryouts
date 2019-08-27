@@ -9,12 +9,14 @@ pipeline {
         }
         stage('test') {
             steps {
-                sh "mvn test"
+                tool name: 'maven', type: 'maven'
+                sh "${tool name: 'maven', type: 'maven'}/bin/mvn test"
             }
         }
         stage('package') {
             steps {
-                sh "mvn package"
+                tool name: 'maven', type: 'maven'
+                sh "${tool name: 'maven', type: 'maven'}/bin/mvn package"
         }
      }
   }
